@@ -1,5 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+);
 
 //!1
 // const elem = React.createElement("div", {a: 5, b: 10}, "Hello world!", "Hi world!");
@@ -52,51 +60,27 @@ import ReactDOM from 'react-dom';
 //todo
 
 //!4
-const jsxElem1 = <span>Hello</span>;
-const jsxElem2 = <span> </span>;
-const jsxElem3 = <span>world!</span>;
+// const jsxElem1 = <span>Hello</span>;
+// const jsxElem2 = <span> </span>;
+// const jsxElem3 = <span>world!</span>;
 
-const jsxElem = <div>
-  {jsxElem1} 
-  {jsxElem2}
-  {jsxElem3}
-</div>;
+// const jsxElem = <div>
+//   {jsxElem1} 
+//   {jsxElem2}
+//   {jsxElem3}
+// </div>;
 
-console.log("jsxElem: ", jsxElem);
+// console.log("jsxElem: ", jsxElem);
 
-ReactDOM.render(jsxElem, document.querySelector("#root"));
+// ReactDOM.render(jsxElem, document.querySelector("#root"));
 
 //!5
-const data = {
-  id: "id-1",
-  url: "https://cdn.pixabay.com/photo/2017/07/31/22/05/feathers-2561511_1280.jpg",
-  title: "Feathers. Art abstract",
-  price: 500,
-  author: {
-    tag: "ractapopulous",
-    url: "https://pixabay.com/users/ractapopulous-24766/",
-  },
-  quantity: 10,
-};
+// ReactDOM.render(
+//     <React.StrictMode>
+//         <App />
+//     </React.StrictMode>, 
+//     document.querySelector("#root")
+// );
 
 
-function Painting(props){
-  return (
-  <div>
-    <img src={data.url} alt={data.title} width="480"/>
-    <h2>{data.title}</h2>
-    <p>
-      Автор <a href={data.author.url}>{data.author.tag}</a>
-    </p>
-    <p>
-      Цена: {data.price} кредитов
-    </p>
-    <p>
-      Кількість: {data.quantity}
-    </p>
-    <p>Доступность: заканчивается или есть в наличии</p>
-    <button type="button">Добавить в корзину</button>
-  </div>)
-}
-
-ReactDOM.render(<Painting/>, document.querySelector("#root"));
+// ReactDOM.createRoot(document.querySelector("#root")).render(<><App/></>,)
